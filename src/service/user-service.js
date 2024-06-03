@@ -72,6 +72,22 @@ class UserService{
             throw{error}
         }
     }
+    async isAuthenticated(token){
+        try{
+            const response = this.verifyToken(token);
+            if(!response){
+                throw {error:'Invalid token'}
+            }
+            const user = await this.UserReposirtory.getById(response.id);
+            if(!user){
+                throw {error:'Invalid token'}
+            }
+            return user.id;
+        }catch(error){
+            console.log("something went wrong at Service layer in password comparasion.")
+            throw{error}
+        }
+    }
 
     
 }
