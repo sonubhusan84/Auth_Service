@@ -1,5 +1,6 @@
 const UserReposirtory = require('../repository/user-repository')
 const {JWT_KEY} = require('../config/serverConfig');
+const {bcrypt} = require('bcrypt');
 
 class UserService{
     constructor(){
@@ -43,6 +44,16 @@ class UserService{
             throw{error}
         }
     }
+    userPassword(userInputPlainPassword,encryptedPassword){
+        try{
+            return bcrypt.compareSync(userInputPlainPassword,encryptedPassword);
+
+        }catch(error){
+            console.log("something went wrong at Service layer in password comparasion.")
+            throw{error}
+        }
+    }
+    
     
 }
 

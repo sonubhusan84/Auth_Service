@@ -19,4 +19,4 @@ const perpareAndStartServer = ()=>{
      })
 }
 
-perpareAndStartServer();
+perpareAndStartServer(); 
