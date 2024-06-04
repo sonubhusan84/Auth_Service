@@ -7,3 +7,8 @@ Auth_Service
 ->read about salt in encryption
 -> go to src/config/serverconfig.js and export SALT
 ->Install jwt token 'npm i jsonwebtoken'
+->crating a new model to assign roles of each user like costumer,admin etc.
+->npx sequelize model:generate --name Role --attributes name:string
+->after doing changes in role anduser we need to do db syncronisation for creating User_Roles part
+->npx sequelize seed:generate --name add-roles
+->npx sequelize db:seed --seed 20240604112056-add-roles.js

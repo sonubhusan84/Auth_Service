@@ -29,7 +29,6 @@ class UserReposirtory{
                 attributes :['email','id']
             });
             return user;
-
         }catch(error){
             console.log("something went wrong at repository layer.")
             throw{error}
@@ -41,7 +40,6 @@ class UserReposirtory{
                 email : userEmail
             }})
             return user;
-
         }catch(error){
             console.log("something went wrong at repository layer.")
             throw{error}
